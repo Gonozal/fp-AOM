@@ -87,15 +87,18 @@
 
 \chapter{Einleitung}
 
+In diesem Versuch soll der akusto-optische Effekt untersucht werden und durch die Inbetriebnahme eines akusto-optischen Modulators auf verschiedene Arten angewendet werden. Entscheidend ist dabei die Wechselwirkung von Licht- und Schallwellen (im Versuch werden Ultraschallwellen eingesetzt), die es ermöglicht, dass Licht an Schallwellen wie an einem Kristall gebeugt wird. Akusto-optische Modulatoren sind heute u.a. wichtige Elemente der Forschung (z.b. Spektroskopie, Bose-Einstein-Kondensation) und der Telekommunikation sowie der Quantenoptik, um nur einige Einsatzgebiete zu nennen. Es können auch Laserpulse erzeugt werden und vieles mehr, was teilweise im Versuch umgesetzt bzw. aufgezeigt wird.
 
 \chapter{Grundlagen}
 \section{Akusto-optischer Effekt}
 
-Hintergrund und Funktionsweise eines AOM
+Der akusto-optische Modulator (AOM) nutzt die Tatsache, dass Schallwellen in einem Medium ein optisches Gitter erzeugen. Sie bewirken eine periodische Dichte- und somit Brechnungsindexmodulation, d.h. es entsteht ganz analog zur Bragg-Reflexion ein Gitter mit der ``Gitterkonstanten'' $\lambda_S$, der Schallwellenlänge. Es gilt folglich für konstruktive Interferenz: 
+$$2~sin(\theta) = \frac{\lambda}{\lambda_S}$$ 
+Zur technischen Umsetzung dient ein an einen Würfel montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
 
 \section{Betriebsregime eines AOM}
 
-Bragg und Raman-Nath
+
 
 \section{Doppelpasskonfiguration}
 
@@ -105,15 +108,14 @@ Wozu braucht man sie und wie funktioniert sie
 
 \section{Lissajous-Figuren}
 
-\section{Gefahren durch Laserstrahlung und Vorsichtsmaßnahmen}
+\section{Gefahren durch Laserstrahlung und Vorsichtsmaßnahmen} %folgende Inhalte aus 4.9
 
-Inhalte aus 4.9: 
-
-Bei dem in diesem Versuch vorliegenden HeNe Laser mit einigen mW Leistung im roten Spektralbereich sind die potentiellen Gefahren durch Laserstrahlung überschaubar. Vor allem muss hier darauf geachtet werden, dass der Laser nicht in ein Auge gelangt. Aus diesem Grund ist bei eingeschaltetem Laser immer eine Schutzbrille zu Tragen und der Kopf ist nie auf Höhe des Lasers zu halten. Auch sollte darauf geachtet werden, dass Reflexe des Lasers wenn möglich auf die Laserapparatur selbst zurückgelengt werden und vor allem nicht auf einen Eingang zeigen, da sonst außenstehende ohne Schutzbrille gefährdet werden können.
+Bei dem in diesem Versuch vorliegenden HeNe Laser mit einigen mW Leistung im roten Spektralbereich sind die potentiellen Gefahren durch Laserstrahlung überschaubar. Vor allem muss hier darauf geachtet werden, dass der Laser nicht in ein Auge gelangt. Aus diesem Grund ist bei eingeschaltetem Laser immer eine Schutzbrille zu Tragen und der Kopf ist nie auf Höhe des Lasers zu halten. Auch sollte darauf geachtet werden, dass Reflexe des Lasers wenn möglich auf die Laserapparatur selbst zurückgelenkt werden und vor allem nicht auf einen Eingang zeigen, da sonst Außenstehende ohne Schutzbrille gefährdet werden können.
 
 Bei Lasern mit höherer Intensität ist zudem der Kontakt mit dem Körper zu vermeiden, da ein Laser nicht nur oberflächliche Verbrennungen, sondern im Falle eines UV-Lasers auch Hautkrebs und im Falle eines IR-Lasers schmerzlose und deswegen schwer zu erkennende Verbrennungen im Unterhautgewebe verursachen können. Zur Sichtbarmachung von Lasern sollte deswegen nie die nackte Haut sondern eine nicht reflektierende Oberfläche (beispielsweise ein Schirm, der die verwende Laserleistung aushält) verwendet werden.
 
 Abgesehen von den genannte Personenschäden sind bei nicht sachgemäßer Handlung von Lasern mit hoher Intensität auch Schäden am Versuchsaufbau möglich. Verschmutzte Spiegel oder Fenster des Lasermediums können zu extremer Hitzeentwicklung an jeweiligen Material und letztendlich zu dessen Ermattung oder gar Zerstörung führen.
+
 \cite{GefahrenLaser}
 
 \chapter{Durchführung und Auswertung} %pro section kurze Schilderung Versuchsaufbau, Durchführung u. Auswertung ggf. mit subsections
@@ -128,9 +130,18 @@ Zur Messung der Intensität des gebeugten Lichts ist ein Photodektor mit einer P
 
 Zunächst soll der AOM in Betrieb genommen werden und die erste Beugungsordnung sichtbar gemacht werden. Der AOM, der Polarisator, der Polarisations-Strahlteiler sowie der Photodetektor werden vor den Laser entsprechend folgender Skizze aufgebaut:
 
+\begin{figure}[h] 
+  \centering
+     \includegraphics[width=0.7\textwidth]{data/inbetriebnahme.jpg}
+  \caption[Cap for listoffigures]{Aufbau zur Detektierung der ersten Beugungsordnung \cite{Anleitung}}
+  \label{fig:Bild1}
+\end{figure}
+
 Alle Komponenten werden nacheinander so ausgerichtet, dass der Strahl durchgehend möglichst auf der gleichen Höhe (ca. 10 cm) horizontal über dem Tisch verläuft. Bei Installation einer Komponente wird zunächst der Strahl abgeblockt und sichergestellt, dass keine unkontrollierten Reflexe auftreten. Um den Versuchsaufbau nicht zu groß werden zu lassen, wird der Strahl mehrfach mit Spiegeln umgelenkt. Die Linse ist notwendig, um den leicht divergenten Strahl vollständig auf die Fläche der Photodiode abbilden zu können. Mittels der Blende blockieren wir die nullte Beugungsordnung sowie die höheren Beugungsordnungen, so dass die Messung mit dem Photodetektor nur die erste Ordnung erfasst.
 
 \section{Beugungseffizienz in Abhängigkeit der Schallintensität}
+
+Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$ bestimmt werden, d.h. der Quotient aus der Intensität des ersten Beugungsmaximums und der gesamten einfallenden Intensität. Dazu wird der Messaufbau unverändert gestartet, wobei nun über ein eigens geschriebenes Computerprogramm die Frequenzgeneratoren und das Oszilloskop derart angesteuert werden, dass jeweils für eine feste Spannung $U_F$ eine Variation von $U_M$ in 0,1 V-Schritten von 0 V bis 5 V erfolgt und die Werte ausgezeichnet werden. $U_F$ verstellen wir von Hand in 1 V-Schritten von 0 V bis 10 V, so dass wir 10 Messreihen mit Werten für die Intensität der ersten Beugungsordnung erhalten. Zu beachten ist das unterschiedliche Offset der Photodiode, welches ohne Streulicht stets 12 mV beträgt und mit Streulicht 16 mV für die zweite Messreihe und 160 mV für alle anderen Messreihen. Dies kommt durch das bei der zweiten Messreihe geschlossene Rollo im Versuchsraum zustande (bedingt durch die Messung einer anderen Laborgruppe). Zusätzlich ist der Laser thermisch nicht völlig stabil, was sich in einer Schwankung des Messwertes für die nullte Begungsordnung von 7,6 V bis 8,16 V bemerkbar macht.
 
 \section{Beugungseffizienz in Abhängigkeit des Winkels}
 
@@ -145,9 +156,12 @@ Alle Komponenten werden nacheinander so ausgerichtet, dass der Strahl durchgehen
 %ENDE INHALT
 \cleardoublepage{}
 % Eintrag fürs Inhaltsverzeichnis
-%\newpage
-%\begin{thebibliography}{100}
-%\end{thebibliography}
+\newpage
+\begin{thebibliography}{100}
+   \bibitem{GefahrenLaser} \url{http://de.wikipedia.org/w/index.php?title=Laser&oldid=128632514#Gefahren}
+   
+   \bibitem{Anleitung} Anleitungsblatt zum Versuch
+\end{thebibliography}
 
 \cleardoublepage{}
 % Eintrag fürs Inhaltsverzeichnis
