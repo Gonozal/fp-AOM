@@ -22,6 +22,8 @@
 %\usepackage{chemformula}
 % Deutsche Zahlen (entfernt z.B. das Leerzeichen nach einem Dezimal-Komma)
 \usepackage{ziffer} 
+%wegen Grafikverschiebung hinzugefügt
+\usepackage{float}
 
 \usepackage[verbose]{placeins}
 
@@ -136,7 +138,7 @@ Zur Messung der Intensität des gebeugten Lichts ist ein Photodektor mit einer P
 
 Zunächst soll der AOM in Betrieb genommen werden und die erste Beugungsordnung sichtbar gemacht werden. Der AOM, der Polarisator, der Polarisations-Strahlteiler sowie der Photodetektor werden vor den Laser entsprechend folgender Skizze aufgebaut:
 
-\begin{figure}[h] 
+\begin{figure}[H] 
   \centering
      \includegraphics[width=0.7\textwidth]{data/inbetriebnahme.jpg}
   \caption[Cap for listoffigures]{Aufbau zur Detektierung der ersten Beugungsordnung \cite{Anleitung}}
@@ -152,6 +154,13 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h. 
 \section{Beugungseffizienz in Abhängigkeit des Winkels}
 
 Die Messung ist prinzipiell die gleiche wie zuvor, allerdings ist die zu variierende Größe nun der Winkel zwischen Schall- und Lichtwellen und die Spannungen $U_M$, $U_F$ sind konstant. Wir bestimmen zunächst über den Rückreflex des AOMs den Winkel zwischen einfallendem und reflektiertem Strahl, indem ein Schirm mit aufgeklebtem Millimeterpapier direkt neben den einfallenden Strahl zwischen dem letzten Spiegel und AOM aufgestellt wird (für eine gute Genauigkeit möglichst weit vom AOM entfernt). Gemäß folgender Skizze lässt sich der Winkel $\omega$ dann leicht zu $\omega = arc tan (\frac{x}{d})$berechnen: 
+
+\begin{figure}[H] 
+  \centering
+     \includegraphics[width=0.7\textwidth]{data/omega-bestimmung.jpg}
+  \caption[Cap for listoffigures]{Aufbau zur Winkelbestimmung}
+  \label{fig:Bild2}
+\end{figure}
 
 Aus der Bragg-Bedingung lässt sich erkennen, dass der Winkel $\theta$ zwischen Schall- und Lichtwellen genau $\frac{\omega}{2}$ ist. D.h. $\theta = \frac{arc tan (\frac{x}{d})}{2}$. Die eigentliche Messung erfolgt jeweils nach der Bestimmung von x, wobei dies durch die Größe des Laserstrahls auf dem Schirm erschwert worden ist. Wir setzen daher einen Fehler von $\Delta~x = 0,25~mm$ an. d ist konstant mit $d = 226~mm \pm 2~mm$, $U_M = 5~V$ und $U_F = 10~V$. Das Offset beträgt für alle Messungen 16 bzw. 12 mV (siehe vorheriger Abschnitt). Um eine bessere Genaugkeit zu erreichen, sind zwei komplette Messreihen von x=0 mm bis x=6,5 mm in Schritten von 0,5 mm aufgenommen worden. Dies entspricht der Detektierung von 2 Maxima.
 
