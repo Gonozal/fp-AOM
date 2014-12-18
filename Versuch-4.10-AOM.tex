@@ -98,7 +98,7 @@ Der akusto-optische Modulator (AOM) nutzt die Tatsache, dass Schallwellen in ein
 $$2~sin(\theta) = \frac{\lambda}{\lambda_S}$$ 
 Zur technischen Umsetzung dient ein an einen Würfel montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
 
-\section{Betriebsregime eines AOM}
+\section{Betriebsregime eines AOMs}
 
 Die Bragg-Bedingung setzt bei genauer Betrachtung eine hinreichende Länge des Mediums voraus, durch welches die Schallwelle propagiert und eine Brechungsindexmodulation bewirkt. Es tritt dann nur die erste Beugungsordnung auf und man spricht vom Bragg-Regime. Dies liegt auch unserer Betrachtung zugrunde, man muss aber beachten, dass auch das sog. Raman-Nath (häufig auch: Debye-Sears-Regime) vorliegen kann, vor allem wenn die Länge des Mediums kurz im Vergleich zur Schallwellenlänge ist. Die Bragg-Bedingung gilt dann nicht mehr, d.h. es tritt keine klassische Beugung am Gitter auf, sondern lediglich eine periodische Veränderung der Phase des Lichts. Es sind dann auch höhere Beugungsordnungen zu beobachten. Zur Unterscheidung kann ein Parameter $\rho$ wie folgt definiert werden: 
 $$\rho = \frac{\lambda_0^2}{\lambda_S~\bar{n}~n_1}$$
@@ -130,11 +130,11 @@ Abgesehen von den genannte Personenschäden sind bei nicht sachgemäßer Handlun
 
 \section{Bauteile zur akusto-optischen Modulation}
 
-Im Wesentlichen benötigt man zur Beobachtung des akusto-optischen Effektes eine geeignete Lichtquelle, den AOM samt geeigneter Stromquellen sowie einen Photodetektor und Auslesegerätschaft (Oszilloskop, Software). Als Lichtquelle nutzen wir einen He-Ne-Laser, der unpolarisiertes rotes Licht einer Wellenlänge von 633 nm mit einer Ausgangsleistung von 10 mW aussendet. Um die Ausgangsleistung zu variieren, nutzen wir daher zusätzlich einen Polarisator. Außerdem ist ein Polarisations-Strahlteiler (PBS) vorhanden, mit dem ebenfalls die Intensität des Lichts variiert werden kann und der später für die Doppelpasskonfiguration wichtig ist. Weiterhin sind zwei baugleiche AOMs vorhanden, wobei einer horizontal, der andere vertikal ablenkt. IdR. wird der horizontal ablenkende AOM zur Verwendung gebracht. Zur Inbetriebnahme der AOMs wird eine geeignete Hochfrequenz-Spannungsversorgung benötigt. Diese erhalten wir für jeden AOM aus einem sog. Voltage Controlled Oszillator (VCO), welcher die Frequenz der Schallwelle über einen Frequenzmodulationseingang (FREQ IN) mit Spannungsn $U_F$ zwischen 0 V und 10 V regeln kann und die Amplitude über einen Modulationseingang (MOD IN) mit Spannungen $U_M$ zwischen 0 V und 5 V. Da das Piezoelement der AOMs eine sehr viel höhere Leistung benötigt als durch die VCOs bereitgestellt werden kann, werden zusätzlich Verstärker zwischengeschaltet. VCOs und Verstärker werden mit einer Spannung von 24 V von einem Labornetzteil versorgt. Die Steuerspannungen $U_F$ und $U_M$ für die VCOs erzeugen wir mit zwei Funktionsgeneratoren, mit denen man DC-, Rechteck-, Sinus-, Sägezahn- und Pulsspannungen erzeugen kann. Die Einstellung erfolgt direkt über Knöpfe oder über Ansteuerung via PC.
+Im Wesentlichen benötigt man zur Beobachtung des akusto-optischen Effektes eine geeignete Lichtquelle, den AOM samt geeigneter Stromquellen sowie einen Photodetektor und Auslesegerätschaft (Oszilloskop, Software). Als Lichtquelle nutzen wir einen He-Ne-Laser, der unpolarisiertes rotes Licht einer Wellenlänge von 633 nm mit einer Ausgangsleistung von 10 mW aussendet. Um die Ausgangsleistung zu variieren, nutzen wir daher zusätzlich einen Polarisator. Außerdem ist ein Polarisations-Strahlteiler (PBS) vorhanden, mit dem ebenfalls die Intensität des Lichts variiert werden kann und der später für die Doppelpasskonfiguration wichtig ist. Weiterhin sind zwei baugleiche AOM vorhanden, wobei einer horizontal, der andere vertikal ablenkt. IdR. wird der horizontal ablenkende AOM zur Verwendung gebracht. Zur Inbetriebnahme der AOM wird eine geeignete Hochfrequenz-Spannungsversorgung benötigt. Diese erhalten wir für jeden AOM aus einem sog. Voltage Controlled Oszillator (VCO), welcher die Frequenz der Schallwelle über einen Frequenzmodulationseingang (FREQ IN) mit Spannungsn $U_F$ zwischen 0 V und 10 V regeln kann und die Amplitude über einen Modulationseingang (MOD IN) mit Spannungen $U_M$ zwischen 0 V und 5 V. Da das Piezoelement der AOM eine sehr viel höhere Leistung benötigt als durch die VCOs bereitgestellt werden kann, werden zusätzlich Verstärker zwischengeschaltet. VCOs und Verstärker werden mit einer Spannung von 24 V von einem Labornetzteil versorgt. Die Steuerspannungen $U_F$ und $U_M$ für die VCOs erzeugen wir mit zwei Funktionsgeneratoren, mit denen man DC-, Rechteck-, Sinus-, Sägezahn- und Pulsspannungen erzeugen kann. Die Einstellung erfolgt direkt über Knöpfe oder über Ansteuerung via PC.
 
 Zur Messung der Intensität des gebeugten Lichts ist ein Photodektor mit einer Photodiode vorhanden, der an ein Oszilloskop angeschlossen wird, um die Messwerte als Spannungen über der Zeit sichtbar zu machen. Das Oszilloskop kann ebenfalls über den PC verwendet werden, da es über einen USB-Anschluss verfügt. Zusätzlich ist ein Spektralanalysator vorhanden, der die Ausgangswerte des Photodetektors bis zu einer Frequenz von 1 GHz darstellen kann, sowie eine CCD-Kamera, die mit dem PC verbunden wird und zum Abspeichern von Bildern (z.B. der Lissajous-Figuren) dient.
 
-\section{Inbetriebnahme des AOMs}
+\section{Inbetriebnahme des AOM}
 
 Zunächst soll der AOM in Betrieb genommen werden und die erste Beugungsordnung sichtbar gemacht werden. Der AOM, der Polarisator, der Polarisations-Strahlteiler sowie der Photodetektor werden vor den Laser entsprechend folgender Skizze aufgebaut:
 
@@ -146,6 +146,8 @@ Zunächst soll der AOM in Betrieb genommen werden und die erste Beugungsordnung 
 \end{figure}
 
 Alle Komponenten werden nacheinander so ausgerichtet, dass der Strahl durchgehend möglichst auf der gleichen Höhe (ca. 10 cm) horizontal über dem Tisch verläuft. Bei Installation einer Komponente wird zunächst der Strahl abgeblockt und sichergestellt, dass keine unkontrollierten Reflexe auftreten. Um den Versuchsaufbau nicht zu groß werden zu lassen, wird der Strahl mehrfach mit Spiegeln umgelenkt. Die Linse ist notwendig, um den leicht divergenten Strahl vollständig auf die Fläche der Photodiode abbilden zu können. Mittels der Blende blockieren wir die nullte Beugungsordnung sowie die höheren Beugungsordnungen, so dass die Messung mit dem Photodetektor nur die erste Ordnung erfasst.
+
+Aufällig ist sofort, dass nicht nur die erste Beugungsordnung auftritt, sondern mindestens noch die zweite Ordnung sichtbar ist. Gemäß den Ausführungen zu den Betriebsregimes eines AOMs handelt es sich also nicht um ein (reines) Bragg-Regime. Trotzdem wird das Braggsche Gesetz zugrunde gelegt, da wir vermuten, dass die Abweichung, wenn vorhanden, hinreichend gering ist. Darauf wird später zurückblickend eingegangen.
 
 \section{Beugungseffizienz in Abhängigkeit der Schallintensität}
 
@@ -166,11 +168,48 @@ Aus der Bragg-Bedingung lässt sich erkennen, dass der Winkel $\theta$ zwischen 
 
 \section{Pulserzeugung}
 
+Wir nutzen nun die Möglichkeit, mit dem AOM Laserpulse zu erzeugen. Dazu wird mit den Funktionsgeneratoren eine Pulsspannung in den Modulationseingang eingespeist. Zunächst bleibt der Aufbau so wie in Abbildung 3.1. gezeigt und es werden drei Pulse erzeugt, die sich jeweils in Pulslänge und Repetitionsrate unterscheiden. Diese werden über den Photodetektor aufgezeichnet und auf dem Oszilloskop sichtbar gemacht, wodurch wir die tatsächliche Repetitionsrate, die Pulslänge sowie die Anstiegszeit ablesen können. Die Ergebnisse werden zur Auswertung an den PC übertragen. 
+
+Als nächstes werden Pulslänge und Anstiegszeit konstant gewählt: $\tau_P = 1~\mu s$, $t_{rise} = 20~ns$. Der Aufbau wird verändert, so dass er folgender Skizze entspricht:  
+
+\begin{figure}[H] 
+  \centering
+     \includegraphics[width=0.7\textwidth]{data/pulserzeugung.jpg}
+  \caption[Cap for listoffigures]{Aufbau zur Pulserzeugung mit verschiedenen Linsen L1 und L2}
+  \label{fig:Bild2}
+\end{figure}
+
+Die Messung wird via Oszilloskop für Kombinationen von Linsen L1 und L2 verschiedener Brennweiten ausgewertet und wie vorher aufgezeichnet.
+
 \section{AOM als Frequenzschieber}
+
+Der AOM soll nun in der Doppelpasskonfiguration in Betrieb genommen werden, um ein Spektrum des Lichtes zu erhalten, welches ihn zweimal passiert hat. Folglich wird der Spektralanalysator an den Photodetektor angeschlossen und die Messapparatur wie folgt aufgebaut: 
+
+\begin{figure}[H] 
+  \centering
+     \includegraphics[width=0.7\textwidth]{data/doppelpass.jpg}
+  \caption[Cap for listoffigures]{Doppelpasskonfiguration}
+  \label{fig:Bild2}
+\end{figure}
+
+Nun wird die Messung mit $U_M = 5~V$ und variabler $U_F$ gestartet. Wir stellen fest, dass die Auflösung der Photodiode nicht ausreicht um die charakteristischen Peaks zu detektieren. KOPIERTE MESSDATEN, ALS EIGENE DARSTELLEN ODER PROBLEM SCHILDERN USW.? PEAKS VON LINKS NACH RECHTS: NULLPEAK, SCHWEBUNG 1.-4., SCHWEBUNG 0.-1., SCHWEBUNG 1.-2., SCHWEBUNG LASERMODEN
 
 \section{AOM als Deflektor}
 
+Für diese letzte Messung werden beide AOM benötigt, der Strahl wird also horizontal und vertikal abgelenkt. Beide werden so nah wie möglich beieinander aufgestellt, um sie möglichst genau in den Brennpunkt der Linse L2 zu stellen, entsprechend folgender Skizze:
+
+\begin{figure}[H] 
+  \centering
+     \includegraphics[width=0.7\textwidth]{data/deflektion.jpg}
+  \caption[Cap for listoffigures]{Aufbau zur Beobachtung von Lissajous-Figuren}
+  \label{fig:Bild2}
+\end{figure}
+
+Die Spannung $U_M$ wird für beide AOM konstant auf 5 V eingestellt (sie werden an ein Schaltnetzteil angeschlossen) und $U_F$ wird mit Hilfe der Funktionsgeneratoren derart variiert, dass die Frequenzen mehr oder weniger gering voneinander abweichen. Es wird dabei eine Sinusspannung verwendet, die jedoch stets einen positiven Wert besitzt bzw. zwischen 0 V und 10 V liegt. Als Linse L2 setzen wir diejenige mit der größten Brennweite, d.h. $f = 200~mm$ ein, da bei einer zu kleinen Brennweite die Beugungsordnungen zu dicht beeinander liegen würden (STIMMT DIE BEGRÜNDUNG?) Mittels der CCD Kamera können die entstehenden Lissajous-Figuren sichtbar gemacht und Momentaufnahmen gespeichert werden. Somit wird auch die geringe Ungenauigkeit der Funktionsgeneratoren sofort sichtbar, indem man ein rationales Verhältnis der beiden Frequenzen einstellt und trotzdem eine langsame Rotation der entstehenden Lissajous-Figur beobachtet.
+
 \chapter{Fazit}
+
+In der Tat kann man feststellen, dass die Berechnungen gemäß der Bragg-Bedingung zielführend und von hinreichender Genaugkeit sind, obwohl auch höhere Beugungsordnungen sichtbar gewesen sind. Der exakte Parameter $\rho$ lässt sich leider nicht ohne weiteres berechnen, da schwierig zu bestimmende Größen wie der mittlere Brechnungsindex sowie die Modulation des Brechungsindex enthalten sind. Es ist aber ersichtlich, dass $\rho$ im kritischen Bereich liegen muss, d.h. höchstwahrscheinlich zwischen 1 und 10 liegt. Somit lässt sich erklären, dass zwar Beugung nach dem Bragg-Gesetz auftritt, jedoch auch höhere Beugungsordnungen (gemäß des Raman-Nath-Regimes) beobachtet werden können.
 
 %ENDE INHALT
 \cleardoublepage{}
