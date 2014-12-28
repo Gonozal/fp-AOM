@@ -383,7 +383,7 @@ Die Anstiegszeit des gemessenen Laserimpulses kommt durch die räumliche Ausdehn
 
 Anfänglich wurde ein Fehler bei der Justage der Linsen gemacht, insbesondere wurde die im Strahlengang weiter hinten befindliche Linse zu weit vom AOM entfernt angebracht. Aus diesem Grund liegen uns nur 2 verwertbare Messungen vor:
 
-\begin{table}{h!}
+\begin{table}[H]
   \begin{center}
     \begin{tabular}{|p{5cm}|p{4cm}|p{4.5cm}|}
       \hline
@@ -409,32 +409,51 @@ Der AOM soll nun in der Doppelpasskonfiguration in Betrieb genommen werden, um e
   \label{fig:Bild3}
 \end{figure}
 
-PEAKS VON LINKS NACH RECHTS: NULLPEAK, SCHWEBUNG 1.-4., SCHWEBUNG 0.-1., SCHWEBUNG 1.-2., SCHWEBUNG LASERMODEN
-
 Nun wird die Messung mit $U_M = 5~V$ und variabler $U_F$ gestartet. Wir stellen fest, dass die Auflösung der Photodiode nicht ausreicht um die charakteristischen Peaks zu detektieren. Um dennoch die Auswertung dieses Versuches abschließen zu können, wurden uns für diesen Abschnitt Messdaten der Praktikumsgruppe vom 01.12.2014 zur Verfügung gestellt.
 
 \begin{figure}[H]
   \centering
      \includegraphics[width=0.7\textwidth]{data/Aufgabe6/aom aus.png}
-  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein peak bei 341.5 mHz zu sehen\cite{AndereGruppe}}
+  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein peak bei 341.5 MHz zu sehen\cite{AndereGruppe}}
   \label{fig:Bild4}
 \end{figure}
 
+Offensichtlich treten auch ohne Einwirkung des AOMs Schwebungen zwischen verschiedenen Laserfrequenzen auf. Erklärt werden kann dies durch Schwebung der Grundmode mit höheren im Laser entstehenden longitudinalen Moden. Der Frequenzunterschied zweier benachtbarter Lasermoden ist durch $\Delta \nu = \frac{c}{2L}$ gegeben. Einsetzen der Frequenzdifferenz von $341,515MHz$ ergibt eine theoretische Resonatorlänge von etwa $41,5cm$. Leider sind uns keine genauen Angaben zur tatsächlichen Resonatorlänge bekannt, allerdings passt der errechnete Wert in etwa zur größe des verwendeten Lasers.
+
+Bei Inbetriebnahme des AOMs kommen wie erwartet weitere Peaks hinzu.
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[h]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{data/Aufgabe6/Aufgabe6_Uf3V_AOMein.png}
-    \caption[Cap for listoffigures]{$\tau_P = 500ms$, $f_{rep} = 1Hz$}
-    \label{fig:1Hz500ms}
-  \end{subfigure}%
-  \begin{subfigure}[h]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{data/Aufgabe6/frequ Uf 1.png}
-    \caption[Cap for listoffigures]{$\tau_P = 1\mu s$, $f_{rep} = 500kHz$}
-    \label{fig:500kHz1ys}
+  \begin{subfigure}[H]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe6/frequ_Uf_1.png}
+    \caption[Cap for listoffigures]{$U_f = 1V$}
+    \label{fig:UF1}
   \end{subfigure}
-  \caption{\cite{AndereGruppe}}\label{fig:nolenspulses}
+  \begin{subfigure}[H]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe6/Aufgabe6_Uf3V_AOMein.png}
+    \caption[Cap for listoffigures]{$U_f = 3V$}
+    \label{fig:UF3}
+  \end{subfigure}~%
+  \caption{Aufgenommene Peaks bei Betrieb des AOMs in Doppelpasskonfugration.\cite{AndereGruppe}}\label{fig:doublepasspeaks}
 \end{figure}
+
+Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch den AOM modifizierten Laserfrequenz treten hier noch 2 weitere, schwächere Peaks auf. Es stellt sich heraus, dass der 2. peak von rechts genau der Frequenzdifferenz zwischen der durch den AOM hervorgerufenen Schwebung und der Lasermoden-Schwebung entspricht, und kann so als Schwebung dieser beiden Frequenzen aufgefasst werden. Der erste Peak von links (abgesehen von dem am Rand zu sehenden nullpeak) entspricht wiederrum genau der Frequenzdifferenz des eben genannten peaks und des AOM-Peaks.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{|p{3cm}|p{6cm}|}
+      \hline
+          $U_f$ in V & Position der gemessenen AOM-Peaks \\ \hline
+          $1V$       & $136,7 MHz$                       \\ \hline
+          $3V$       & $147,1 MHz$                       \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Frequenzverschiebung im AOM in Abhängigkeit von der angelegten Frequenzmodulationsspannung \cite{AndereGruppe}. Da wir den Fehler durch die Durchfürhung nicht beurteilen können, schätzen wir ihn an Hand der Pixelgröße auf $\Delta \nu = 1MHz$ ab.}
+\end{table}
+
+Da der Laser in der Doppelpasskonfiguration den AOM zwei mal durchquert, muss die gemessene Frequenz noch halbiert werden. An Hand dieser Daten kann dann eine Eichung der Frequenzmodulationsspannung $U_f$ durchgeführt werden. 
+
+Da für einen Fit zu wenige Daten vorhanden sind, nehmen wir den Zusammenhang zwischen $\Delta \nu$ und $U_f$ als linear an und erhalten auf $\Delta \nu\left( U_f \right) = \left( 2,6 \pm 0,18 \right)\frac{MHz}{V}$.
 
 
 \section{AOM als Deflektor}
