@@ -1,0 +1,138 @@
+% Klassifiziert den Dokumenten-Typ
+% Doku: http://exp1.fkp.physik.tu-darmstadt.de/tuddesign/
+% Farben: http://www.tu-darmstadt.de/media/medien_stabsstelle_km/services/medien_cd/das_bild_der_tu_darmstadt.pdf
+%  bigchapter: Chapter haben doppelte Schriftgröße
+%  linedtoc: Linien im Inhaltsverzeichnis wie bei Überschriften
+%  colorbacktitle: Der Dokumenten-Titel wird mir der Accentfarbe hinterlegt
+\documentclass[bigchapter,colorback,accentcolor=tud4b,linedtoc,11pt]{tudreport}
+
+% Input Dokument hat das Encoding UTF-8
+\usepackage[utf8]{inputenc}
+% Wichtiges Paket für Links und verlinktes Inhaltsverzeichnis
+\usepackage[ngerman]{hyperref}
+% Paket für Fußnoten
+\usepackage[stable]{footmisc}
+% Paket für Bibliotheks-Verzeichnis, square: Verwende eckige statt runde klammern
+% \usepackage[square]{natbib}
+% Paket zum Plotten von Datensätzen
+\usepackage{pgfplots}
+% Verwende deutsche Bezeichner für Inhaltsverzeichnis, ... (ngerman = New German: neue Rechtschreibung)
+\usepackage{ngerman}
+% Modul für chemische Formeln
+%\usepackage{chemformula}
+% Deutsche Zahlen (entfernt z.B. das Leerzeichen nach einem Dezimal-Komma)
+\usepackage{ziffer} 
+%wegen Grafikverschiebung hinzugefügt
+\usepackage{float}
+
+\usepackage[verbose]{placeins}
+
+%\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage{subcaption} %Für subfigures
+
+\pgfkeys{%
+  /pgfplots/epsilonforuf/.style={%
+    legend pos=north west,
+    xlabel=$U_m$  in  $V$,
+    x tick label style={/pgf/number format/.cd,%
+      set thousands separator={},
+      set decimal separator={,}
+    },%
+    ylabel=Beugungseffizienz $\varepsilon$,
+    y tick label style={/pgf/number format/.cd,%
+      set thousands separator={},
+      set decimal separator={,}
+    },%
+    width=0.38\linewidth,
+    height=0.22\linewidth,
+    scale only axis,
+    xmin=0,
+    xmax=5,
+    grid=both,
+    ymin=0,
+    ymax=0.82,
+    tick align=outside,
+    tickpos=left,
+    minor x tick num=3,
+    minor y tick num=4,
+    minor grid style={dotted,thin},
+  }
+}
+
+\pgfkeys{%
+  /pgfplots/epsilonforuf/.style={%
+    legend pos=north east,
+    xlabel=$\theta$  in  rad,
+    x tick label style={/pgf/number format/.cd,%
+      set thousands separator={},
+      set decimal separator={,}
+    },%
+    ylabel=$I$ in $V$,
+    y tick label style={/pgf/number format/.cd,%
+      set thousands separator={},
+      set decimal separator={,}
+    },%
+    width=0.38\linewidth,
+    height=0.22\linewidth,
+    scale only axis,
+    xmin=0,
+    grid=both,
+    ymin=0,
+    ymax=6,
+    tick align=outside,
+    tickpos=left,
+    minor x tick num=3,
+    minor y tick num=4,
+    minor grid style={dotted,thin},
+  }
+}
+
+% PDF-Optionen
+\hypersetup{%
+  pdftitle={TU Darmstadt \- Physikalisches Praktikum für Fortgeschrittene},
+  pdfauthor={Esra Bauer und Sören Link},
+  pdfsubject={Versuch 4.10},
+  pdfview=FitH,
+}
+
+% Kleines makro zur assymetrischen Fehlerangabe
+\def\tol#1#2#3{\hbox{\rule{0pt}{15pt}${#1}^{+{#2}}_{-{#3}}$}}% 
+
+% Entspricht-Zeichen
+\usepackage{scalerel}
+
+\newcommand\equalhat{%
+\let\savearraystretch\arraystretch
+\renewcommand\arraystretch{0.3}
+\begin{array}{c}
+\stretchto{
+    \scalerel*[\widthof{=}]{\wedge}
+    {\rule{1ex}{3ex}}%
+}{0.5ex}\\ 
+=%
+\end{array}
+\let\arraystretch\savearraystretch
+}
+%BEGINN TITELSEITE
+
+\title{Akusto-optischer Modulator}
+
+\subtitle{Esra Bauer  \\Sören Link}
+
+\subsubtitle{Betreuer: Daniel Schraft \hfill Versuchsdatum: 8. Dezember 2014}
+
+\author{Esra Bauer, Sören Link}
+
+%\settitlepicture{img/title.jpg}
+
+\institution{Physikalisches Praktikum \\für Fortgeschrittene \\ Versuch 4.10}
+
+\date{\today}
+
+
+%ENDE TITELSEITE
+
+\begin{document}
+  error bars/.cd,
+\end{document}
