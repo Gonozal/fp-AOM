@@ -31,6 +31,24 @@
 %\usepackage{caption}
 \usepackage{subcaption} %Für subfigures
 
+% Anhänge für Original-Messdaten
+\usepackage{fancyvrb}
+
+% redefine \VerbatimInput
+\RecustomVerbatimCommand{\VerbatimInput}{VerbatimInput}%
+{fontsize=\footnotesize,
+ %
+ frame=lines,  % top and bottom rule only
+ framesep=2em, % separation between frame and text
+ fontsize=\scriptsize,
+ %
+ labelposition=topline,
+ %
+ commandchars=\|\(\), % escape character and argument delimiters for
+                      % commands within the verbatim
+ commentchar=*        % comment character
+}
+
 \pgfkeys{%
   /pgfplots/epsilonforuf/.style={%
     legend pos=north west,
@@ -214,7 +232,7 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h.\
 \begin{figure}[h]
 \begin{tikzpicture}
 \begin{axis}[
-  title={Beugungseffizienz $\varepsilon$ für $U_f=0V$},
+  title={Beugungseffizienz $\varepsilon$ für $U_F=0V$},
   epsilonforuf,
   name=first
 ]
@@ -224,7 +242,7 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h.\
 \end{axis}
 
 \begin{axis}[
-  title={Beugungseffizienz $\varepsilon$ für $U_f=10V$},
+  title={Beugungseffizienz $\varepsilon$ für $U_F=10V$},
   epsilonforuf,
   name=second,
   at=(first.outer south east),
@@ -234,27 +252,27 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h.\
 \addlegendentry{Beugungseffizienz}
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$\varepsilon\left(U_m\right)$ für Amplitudenspannungen von 0V und 10V. An Hand dieser Graphen ist noch keine Zusammenhang zwischen $U_f$ und $\varepsilon$ zu erkennen.}
+\captionof{figure}{$\varepsilon\left(U_m\right)$ für Amplitudenspannungen von 0V und 10V. An Hand dieser Graphen ist noch keine Zusammenhang zwischen $U_F$ und $\varepsilon$ zu erkennen.}
 \end{figure}
 
 \begin{figure}[h]
 \begin{tikzpicture}
 \begin{axis}[
-  title={Beugungseffizienz $\varepsilon$ für verschiedene $U_f$},
+  title={Beugungseffizienz $\varepsilon$ für verschiedene $U_F$},
   epsilonforuf,
   name=first,
   width=0.9\linewidth
 ]
 \addplot[red, only marks, mark=x, mark size=2pt, error bars/.cd, y dir=both, y fixed relative=0.07] table[x index=0,y expr=(\thisrowno{1}-0.160)/7.88] {data/Aufgabe3/0V UF.txt};
-\addlegendentry{$U_f = 0V$}
+\addlegendentry{$U_F = 0V$}
 \addplot[blue, only marks, mark=x, mark size=2pt, error bars/.cd, y dir=both, y fixed relative=0.07] table[x index=0,y expr=(\thisrowno{1}-0.160)/7.88] {data/Aufgabe3/5V UF.txt};
-\addlegendentry{$U_f = 5V$}
+\addlegendentry{$U_F = 5V$}
 \addplot[black, only marks, mark=x, mark size=2pt, error bars/.cd, y dir=both, y fixed relative=0.07] table[x index=0,y expr=(\thisrowno{1}-0.160)/7.88] {data/Aufgabe3/10V UF.txt};
-\addlegendentry{$U_f = 10V$}
+\addlegendentry{$U_F = 10V$}
 \end{axis}
 
 \end{tikzpicture}
-\captionof{figure}{$\varepsilon\left(U_m\right)$ für $U_f$ von 0V, 5V und 10V. Hier ist gut zu sehen, dass alle auftreten Intensitätsänderungen innerhalb der Fehlerbalken liegen.}
+\captionof{figure}{$\varepsilon\left(U_m\right)$ für $U_F$ von 0V, 5V und 10V. Hier ist gut zu sehen, dass alle auftreten Intensitätsänderungen innerhalb der Fehlerbalken liegen.}
 \end{figure}
 
 \begin{figure}[h]
@@ -264,7 +282,7 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h.\
   epsilonforuf,
   name=first,
   width=0.9\linewidth,
-  xlabel=$U_f$  in  $V$,
+  xlabel=$U_F$  in  $V$,
   ylabel=$\varepsilon_{max}$,
   xmax=10,
   ymin=0.6,
@@ -276,11 +294,11 @@ Es soll nun die Beugungseffizienz $\epsilon = \frac{I_1}{I_{einfallend}}$, d.h.\
 \end{axis}
 
 \end{tikzpicture}
-\captionof{figure}{Maximale Beugungseffizienz $\varepsilon_{max}(U_f)$. Die Fehlerbalken aller gemessenen Werte überlappen einander, es ist keine Korrelation zwischen $U_f$ und Beugungseffizienz zu erkennen.}
+\captionof{figure}{Maximale Beugungseffizienz $\varepsilon_{max}(U_F)$. Die Fehlerbalken aller gemessenen Werte überlappen einander, es ist keine Korrelation zwischen $U_F$ und Beugungseffizienz zu erkennen.}
 \end{figure}
 \FloatBarrier
 
-Anhand der aufgenommenen Daten ist keine Korrelation zwischen angelegter Amplitudenspanung und auftretender Beugungseffizienz für das erste Maximum zu erkennen. Die auftretende periodische Schwankung in der gemessenen Effizienz ist durch die thermische Instabilität und die damit einhergehende Intensitätsschwankung des verwendeten Lasers zu erklären. Der Intensitätsverlauf des LAsers ist dabei ansatzweise periodisch. Es ist anzumerken, dass sowohl vor als auch nach der Messung mit $U_f = 4V$ eine kurze Pause in der Messreihe eingelegt wurde, was den etwas größeren Sprung in der gemessenen Intensität im Vergleich zu den umliegenden Messungen erklärt.
+Anhand der aufgenommenen Daten ist keine Korrelation zwischen angelegter Amplitudenspanung und auftretender Beugungseffizienz für das erste Maximum zu erkennen. Die auftretende periodische Schwankung in der gemessenen Effizienz ist durch die thermische Instabilität und die damit einhergehende Intensitätsschwankung des verwendeten Lasers zu erklären. Der Intensitätsverlauf des LAsers ist dabei ansatzweise periodisch. Es ist anzumerken, dass sowohl vor als auch nach der Messung mit $U_F = 4V$ eine kurze Pause in der Messreihe eingelegt wurde, was den etwas größeren Sprung in der gemessenen Intensität im Vergleich zu den umliegenden Messungen erklärt.
 
 \section{Beugungseffizienz in Abhängigkeit des Winkels}
 
@@ -330,18 +348,23 @@ table[
   x dir=both, x fixed=0.0315
 ]
 table[
-  x expr=atan(\thisrow{Abstand}/226)/2,
+  x expr=atan((\thisrow{Abstand} + 0.5)/226)/2,
   y expr=\thisrow{Soeren}/6.88
 ] {data/Aufgabe4/Manuelle Messung.txt};
 \addlegendentry{Beugungseffizienz}
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{2 Messreihen für $\varepsilon(\theta)$, durchgeführt von Esra Bauer und Sören Link. Auf Grund eines gewissen Interpretationsspielraumes beim Ablesen der Messwerte, begründet in der räumlichen Ausdehnung des Laserreflexs in Relation zur notwendigen Häufigkeit der Messungen, existiert eine Verschiebung von etwa 0.05° zwischen den einzelnen Messreihen. Trotzdessen ist der qualitative Verlauf gleich.}
+\captionof{figure}{2 Messreihen für $\varepsilon(\theta)$, durchgeführt von Esra Bauer und Sören Link. Auf Grund eines gewissen Interpretationsspielraumes beim Ablesen der Messwerte, begründet in der räumlichen Ausdehnung des Laserreflexs in Relation zur notwendigen Häufigkeit der Messungen, wird der Fehler für die Position des Reflexes als relativ groß angenommen. Bei der Messung von Sören Link kommt zu den original-Messdaten noch ein Offset von $0.5mm$ hinzu.}
 \end{figure}
-
 \FloatBarrier
 
 An hand der aufgenommenen Daten ist trotz der Verscheibung, die auf Grund systematischer Fehler zwischen den beiden durchgeführten Messreihen zustande kommt, ein qualitativ eindeutiger Verlauf zu erkennen. So ist die Beugungseffizienz bei 0° zunächst sehr gering, erreicht bei einem Einfallswinkel $\theta$ von etwa 0.25°-0.3° ein Maximum und fällt anschließend wieder ab. Ein zweites Maximum ist bei einem Einfallswinkel um 0.7° zu finden.
+
+Mit Hilfe der Bragg-Bedingung $sin\left( \theta \right) = \frac{\lambda}{2\lambda_s} = \frac{\lambda \cdot \nu_s}{2 v_s}$ lässt sich nun aus den gemessenen Peaks die Schallgeschwindigkeit im AOM ausrechnen.
+
+Für den Winkel $\theta$ benutzen wir hier die Position des ersten Peaks, $\theta = (0,325 \pm 0,0315)$°. Die verwendete Schallfrequenz haben wir auf $\nu_s\left( U_F= 10V \right) = \left( 94,35 \pm 1,8 \right)MHz$ bestimmt. Dies gibt uns eine Schallgeschwindigkeit von $v_s = 5262m/s \pm 29227m/s$, was deutlich über dem Literaturwert von $4200m/s$ liegt. 
+
+Durch einen Betrieb des AOMs bei einer Frequenzmodulationspannung $U_F$ von $0V$ statt $10V$ wäre durch die geringere Schallfequenz wohl ein genaueres ablesen der Werte möglich gewesen. Des weiteren ist der genannte Fehler offensichtlich viel zu groß, allerdings ergab sich trotz mehrfachen Nachrechnen nach gauß'scher Fehlerfortpflanzung immer wieder das gleiche Ergebniss. Setzt man statdessen die zuvor errechneten Unsicherheiten für $\theta$ und $\nu_f$ ein, ergibt sich ein Wert von $v_s = 5262m/s \pm 556m/s$.
 
 \section{Pulserzeugung}
 
@@ -396,7 +419,7 @@ Anfänglich wurde ein Fehler bei der Justage der Linsen gemacht, insbesondere wu
 \end{table}
 \FloatBarrier
 
-Zwar ist eine verringerung der Anstiegszeit für eine geringere Brennweite in L1 aus den Daten zu sehen, allerdings macht die Tatsache, dass uns nur 2 Messwerte vorliegen, eine genaue Auswertung unmöglich. Es ist uns lediglich möglich, einen qualitativen Zusamenhang zwischen einer verringerung der Brennweite in L1 und dem Strahldurchmesser und somit der Anstiegszeit des Laserimpulses zu zeigen.
+Zwar ist eine verringerung der Anstiegszeit für eine geringere Brennweite in L1 aus den Daten zu sehen, allerdings macht die Tatsache, dass uns nur 2 Messwerte vorliegen, eine genaue Auswertung unmöglich. Wir sind lediglich in der Lage, einen qualitativen Zusamenhang zwischen einer verringerung der Brennweite in L1 und dem Strahldurchmesser und somit der Anstiegszeit des Laserimpulses zu zeigen.
 
 \section{AOM als Frequenzschieber}
 
@@ -413,7 +436,7 @@ Nun wird die Messung mit $U_M = 5~V$ und variabler $U_F$ gestartet. Wir stellen 
 
 \begin{figure}[H]
   \centering
-     \includegraphics[width=0.7\textwidth]{data/Aufgabe6/aom aus.png}
+     \includegraphics[width=0.7\textwidth]{data/Aufgabe6/aom_aus.png}
   \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein peak bei 341.5 MHz zu sehen\cite{AndereGruppe}}
   \label{fig:Bild4}
 \end{figure}
@@ -426,12 +449,12 @@ Bei Inbetriebnahme des AOMs kommen wie erwartet weitere Peaks hinzu.
   \centering
   \begin{subfigure}[H]{0.45\textwidth}
     \includegraphics[width=\textwidth]{data/Aufgabe6/frequ_Uf_1.png}
-    \caption[Cap for listoffigures]{$U_f = 1V$}
+    \caption[Cap for listoffigures]{$U_F = 1V$}
     \label{fig:UF1}
   \end{subfigure}
   \begin{subfigure}[H]{0.45\textwidth}
     \includegraphics[width=\textwidth]{data/Aufgabe6/Aufgabe6_Uf3V_AOMein.png}
-    \caption[Cap for listoffigures]{$U_f = 3V$}
+    \caption[Cap for listoffigures]{$U_F = 3V$}
     \label{fig:UF3}
   \end{subfigure}~%
   \caption{Aufgenommene Peaks bei Betrieb des AOMs in Doppelpasskonfugration.\cite{AndereGruppe}}\label{fig:doublepasspeaks}
@@ -443,7 +466,7 @@ Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch 
   \begin{center}
     \begin{tabular}{|p{3cm}|p{6cm}|}
       \hline
-          $U_f$ in V & Position der gemessenen AOM-Peaks \\ \hline
+          $U_F$ in V & Position der gemessenen AOM-Peaks \\ \hline
           $1V$       & $136,7 MHz$                       \\ \hline
           $3V$       & $147,1 MHz$                       \\ \hline
     \end{tabular}
@@ -451,9 +474,9 @@ Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch 
   \caption{Frequenzverschiebung im AOM in Abhängigkeit von der angelegten Frequenzmodulationsspannung \cite{AndereGruppe}. Da wir den Fehler durch die Durchfürhung nicht beurteilen können, schätzen wir ihn an Hand der Pixelgröße auf $\Delta \nu = 1MHz$ ab.}
 \end{table}
 
-Da der Laser in der Doppelpasskonfiguration den AOM zwei mal durchquert, muss die gemessene Frequenz noch halbiert werden. An Hand dieser Daten kann dann eine Eichung der Frequenzmodulationsspannung $U_f$ durchgeführt werden. 
+Da der Laser in der Doppelpasskonfiguration den AOM zwei mal durchquert, muss die gemessene Frequenz noch halbiert werden. An Hand dieser Daten kann dann eine Eichung der Frequenzmodulationsspannung $U_F$ durchgeführt werden. 
 
-Da für einen Fit zu wenige Daten vorhanden sind, nehmen wir den Zusammenhang zwischen $\Delta \nu$ und $U_f$ als linear an und erhalten auf $\Delta \nu\left( U_f \right) = \left( 2,6 \pm 0,18 \right)\frac{MHz}{V}$.
+Da für einen Fit zu wenige Daten vorhanden sind, nehmen wir den Zusammenhang zwischen $\Delta \nu$ und $U_F$ als linear an und erhalten $\nu\left( U_F \right) = 65.75 MHz + \left( 2,6 \pm 0,18 \right)\frac{MHz}{V} \cdot V_F$.
 
 
 \section{AOM als Deflektor}
@@ -464,10 +487,81 @@ Für diese letzte Messung werden beide AOM benötigt, der Strahl wird also horiz
   \centering
      \includegraphics[width=0.7\textwidth]{img/deflektion.jpg}
   \caption[Cap for listoffigures]{Aufbau zur Beobachtung von Lissajous-Figuren \cite{Anleitung}}
-  \label{fig:Bild4}
 \end{figure}
 
-Die Spannung $U_M$ wird für beide AOM konstant auf 5 V eingestellt (sie werden an ein Schaltnetzteil angeschlossen) und $U_F$ wird mit Hilfe der Funktionsgeneratoren derart variiert, dass die Frequenzen mehr oder weniger gering voneinander abweichen. Es wird dabei eine Sinusspannung verwendet, die jedoch stets einen positiven Wert besitzt bzw.\ zwischen 0 V und 10 V liegt. Als Linse L2 setzen wir diejenige mit der größten Brennweite, d.h.\ $f = 200~mm$ ein, da bei einer zu kleinen Brennweite die Beugungsordnungen zu dicht beeinander liegen würden (STIMMT DIE BEGRÜNDUNG?) Mittels der CCD Kamera können die entstehenden Lissajous-Figuren sichtbar gemacht und Momentaufnahmen gespeichert werden. Somit wird auch die geringe Ungenauigkeit der Funktionsgeneratoren sofort sichtbar, indem man ein rationales Verhältnis der beiden Frequenzen einstellt und trotzdem eine langsame Rotation der entstehenden Lissajous-Figur beobachtet.
+Die Spannung $U_M$ wird für beide AOM konstant auf 5 V eingestellt (sie werden an ein Schaltnetzteil angeschlossen) und $U_F$ wird mit Hilfe der Funktionsgeneratoren derart variiert, dass die Frequenzen mehr oder weniger gering voneinander abweichen. Es wird dabei eine Sinusspannung verwendet, die jedoch stets einen positiven Wert besitzt bzw.\ zwischen 0 V und 10 V liegt. Als Linse L2 setzen wir diejenige mit der größten Brennweite, d.h.\ $f = 200~mm$ ein, da laut Gauß'scher Strahlenoptik durch Linsen mit hohen Brennweiten gebündelte Strahlen eine über einen größeren Abstand annähernd stabile Strahltaille aufweisen. Mittels der CCD Kamera können die entstehenden Lissajous-Figuren sichtbar gemacht und Momentaufnahmen gespeichert werden. Somit wird auch die geringe Ungenauigkeit der Funktionsgeneratoren sofort sichtbar, indem man ein rationales Verhältnis der beiden Frequenzen einstellt und trotzdem eine langsame Rotation der entstehenden Lissajous-Figur beobachtet.
+
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/1-1-0.png}
+    \caption[Cap for listoffigures]{Aufnahme 1}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/1-1-90.png}
+    \caption[Cap for listoffigures]{Aufnahme 2}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/1-1-180.png}
+    \caption[Cap for listoffigures]{Aufnahme 3}
+  \end{subfigure}%
+  \caption{Lissajous-Figuren für ein Frequenzverältniss von 1:1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-1-(x-y)halbe.png}
+    \caption[Cap for listoffigures]{Aufnahme 1}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-1-x.png}
+    \caption[Cap for listoffigures]{Aufnahme 2}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-1-y.png}
+    \caption[Cap for listoffigures]{Aufnahme 3}
+  \end{subfigure}%
+  \caption{Lissajous-Figuren für ein Frequenzverältniss von 2:1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-3-(x-y)halbe.png}
+    \caption[Cap for listoffigures]{Aufnahme 1}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-3-x.png}
+    \caption[Cap for listoffigures]{Aufnahme 2}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/2-3-y.png}
+    \caption[Cap for listoffigures]{Aufnahme 3}
+  \end{subfigure}%
+  \caption{Lissajous-Figuren für ein Frequenzverältniss von 2:3}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/4-3-(x-y)halbe.png}
+    \caption[Cap for listoffigures]{Aufnahme 1}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/4-3-x.png}
+    \caption[Cap for listoffigures]{Aufnahme 2}
+  \end{subfigure}~%
+  \begin{subfigure}[h]{0.32\textwidth}
+    \includegraphics[width=\textwidth]{data/Aufgabe7/4-3-y.png}
+    \caption[Cap for listoffigures]{Aufnahme 3}
+  \end{subfigure}%
+  \caption{Lissajous-Figuren für ein Frequenzverältniss von 4:3}
+\end{figure}
+
+Um die unterschiedlichen Phasenverschiebungen zu zeigen, wurden von jeder Einstellung drei Aufnahmen gemacht.
+
 
 \chapter{Fazit}
 
@@ -483,7 +577,19 @@ In der Tat kann man feststellen, dass die Berechnungen gemäß der Bragg-Bedingu
    \bibitem{Anleitung} Anleitungsblatt zum Versuch
    \bibitem{AndereGruppe} AOM F-Praktikumsgruppe vom 01.12.2014
 \end{thebibliography}
-
+\chapter{Messdaten}
+\VerbatimInput[label=\fbox{Aufgabe3/0V UF.txt}]{data/Aufgabe3/0V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/1V UF.txt}]{data/Aufgabe3/1V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/2V UF.txt}]{data/Aufgabe3/2V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/3V UF.txt}]{data/Aufgabe3/3V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/4V UF.txt}]{data/Aufgabe3/4V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/5V UF.txt}]{data/Aufgabe3/5V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/6V UF.txt}]{data/Aufgabe3/6V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/7V UF.txt}]{data/Aufgabe3/7V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/8V UF.txt}]{data/Aufgabe3/8V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/9V UF.txt}]{data/Aufgabe3/9V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe3/10V UF.txt}]{data/Aufgabe3/10V_UF.txt}
+\VerbatimInput[label=\fbox{Aufgabe4/Manuelle Messung.txt}]{data/Aufgabe4/Manuelle_Messung.txt}
 \cleardoublepage{}
 % Eintrag fürs Inhaltsverzeichnis
 % Abbildungsverzeichnis einfügen
