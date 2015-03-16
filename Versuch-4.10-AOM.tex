@@ -365,7 +365,7 @@ Ahhand der aufgenommenen Daten ist trotz der Verschiebung, die auf Grund systema
 
 Mit Hilfe der Bragg-Bedingung $sin\left( \theta \right) = \frac{\lambda}{2\lambda_s} = \frac{\lambda \cdot \nu_s}{2 v_s}$ lässt sich nun aus den gemessenen Peaks die Schallgeschwindigkeit im AOM ausrechnen.
 
-Für den Winkel $\theta$ benutzen wir hier die Position des ersten Peaks, $\theta = (0,325 \pm 0,0315)$°. Die verwendete Schallfrequenz haben wir auf $\nu_s\left( U_F= 10V \right) = \left( 94,35 \pm 1,8 \right)MHz$ bestimmt. Dies gibt uns eine Schallgeschwindigkeit von $v_s = 5262m/s \pm 556m/s$, was deutlich über dem Literaturwert von $4200m/s$ liegt.
+Für den Winkel $\theta$ benutzen wir hier die Position des ersten Peaks, $\theta = (0,325 \pm 0,0315)$°. Die verwendete Schallfrequenz haben wir auf $\nu_s\left( U_F= 5V \right) = \left( 78,75 \pm 1,8 \right)MHz$ bestimmt. Dies gibt uns eine Schallgeschwindigkeit von $v_s = 4394m/s \pm 583m/s$. Der Literaturwert für die Schallgewscheindigkeit im Kristall beträgt $4200m/s$, was von unserer Messung bestätigt werden konnte.
 
 \section{Pulserzeugung}
 
@@ -407,7 +407,7 @@ Die Messung wird via Oszilloskop für Kombinationen von Linsen L1 und L2 verschi
 
 Die Anstiegszeit des gemessenen Laserpulses kommt durch die räumliche Ausdehnung des Lasers im AOM zustande, da das Schallwellengitter sich im Kristall mit Schallgeschwindigkeit bewegt und somit eine gewisse Zeit benötigt, bis es den Laserstrahl komplett erfasst hat. Es ist also ein linearer Zusammenhang zwischen Strahldurchmesser im AOM und Anstiegszeit des gemessenen Laserpulses zu erwarten.
 
-Anfänglich wurde ein Fehler bei der Justierung der Linsen gemacht, insbesondere wurde die im Strahlengang weiter hinten befindliche Linse zu weit vom AOM entfernt angebracht. Aus diesem Grund liegen uns nur 2 verwertbare Messungen vor:
+Anfänglich wurde ein Fehler bei der Justierung der Linsen gemacht, insbesondere wurde die im Strahlengang weiter hinten befindliche Linse zu weit vom AOM entfernt angebracht. Aus diesem Grund liegen uns nur 2 verwertbare Messungen, sowie eine Messung ohne Linsen vor:
 
 \begin{table}[H]
   \begin{center}
@@ -416,6 +416,7 @@ Anfänglich wurde ein Fehler bei der Justierung der Linsen gemacht, insbesondere
           Anstiegszeit in $ns$ & Brennweite L1 in mm & Brennweite L2 in mm \\ \hline
           32.80                & 50                  & 150                 \\ \hline
           42.20                & 200                 & 150                 \\ \hline
+          225.2                & ---                 & ---                 \\ \hline
     \end{tabular}
   \end{center}
   \caption{Anstiegszeiten des Laserpulses für verschiedene Linsenkombinationen. }
@@ -423,6 +424,13 @@ Anfänglich wurde ein Fehler bei der Justierung der Linsen gemacht, insbesondere
 \FloatBarrier
 
 Zwar ist eine Verringerung der Anstiegszeit für eine geringere Brennweite in L1 aus den Daten zu sehen, allerdings macht die Tatsache, dass uns nur 2 Messwerte vorliegen, eine genaue Auswertung unmöglich. Wir sind lediglich in der Lage, einen qualitativen Zusammenhang zwischen einer Verringerung der Brennweite in L1 und dem Strahldurchmesser und somit der Anstiegszeit des Laserpulses zu zeigen.
+
+Der Strahlradius $\omega_f$ im inneren des AOMs ergibt sich mit der Gaußschen Strahlenoptik zu $\omega_f^2 = w_0^2 \cdot \frac{f^2}{z^2 + z_R^2}$ mit der Rayleigh-Länge $z_R = \frac{\pi \cdot \omega_0^2}{\lambda}$, dem Abstand der Strahltaille des einfallendes Strahls zum Fokus $z$ und der Brennweite $f$ der verwendeten Linse. Für kollimierte Laserstrahlen gilt $z_R \gg z$, außerdem ist bei der verwendeten Linse $z_R \gg f$, wodurch sich der Ausdruck für $\omega_f$ in Näherung zu $\omega_f = \frac{\lambda \cdot f}{\pi \cdot \omega_0}$ vereinfacht.
+
+Mit Hilfe der Messung ohne Linsen lässt sich über die Schallgeschwindigkeit im Kristall von $4200 m/s$ der Strahldurchmesser auf $0,95mm$ bestimmen, was zu $\omega_0 = 0,47mm$ führt.
+Einsetzen der Brennweiten und $\omega_0$ in die Gleichung für $\omega_f$ liefert uns theoretische Werte für die Anstiegszeiten von $\omega_f(f=200mm)=40,6ns$ und $\omega_f(f=50mm)=10,1ns$.
+
+Der gemessene Wert der Anstiegszeit für die Linse mit Brennweite von 200mm stimmt sehr gut mit dem theoretisch bestimmten Wert überein, die Anstiegszeit bei Verwendung einer Linse mit Brennweite von 50mm liegt dagegen weit über dem theoretischen Wert. Dies kann in einer endlichen Ansteigszeit des Impulsgebers selbst begründet sein. Alternativ besteht die Möglichkeit, dass der AOM nicht perfekt im Brennpunkt der Linse montiert war, was bei geringen Brennweiten der verwendeten Linsen schnell zu signifikanter Ausdehnung des Strahldurchmessers führen kann.
 
 \section{AOM als Frequenzschieber}
 
@@ -440,7 +448,7 @@ Nun wird die Messung mit $U_M = 5~V$ und variabler $U_F$ gestartet. Wir stellen 
 \begin{figure}[H]
   \centering
      \includegraphics[width=0.7\textwidth]{data/Aufgabe6/aom_aus.png}
-  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein Peak bei 341.5 MHz zu sehen.\cite{AndereGruppe}}
+  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM\@. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein Peak bei 341.5 MHz zu sehen.\cite{AndereGruppe}}
   \label{fig:Bild4}
 \end{figure}
 
