@@ -172,7 +172,7 @@ In diesem Versuch soll der akusto-optische Effekt untersucht werden und durch di
 
 Der akusto-optische Modulator (AOM) nutzt die Tatsache, dass Schallwellen in einem Medium ein optisches Gitter erzeugen. Sie bewirken eine periodische Dichte- und somit Brechnungsindexmodulation, d.h.\ es entsteht ganz analog zur Bragg-Reflexion ein Gitter mit der ``Gitterkonstanten'' $\lambda_S$, der Schallwellenlänge. Es gilt folglich für konstruktive Interferenz: 
 $$2~sin(\theta) = \frac{\lambda}{\lambda_S}$$ 
-Zur technischen Umsetzung dient ein an einen Kristall montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
+Zur technischen Umsetzung dient ein an einen Tellurdioxid-Kristall montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
 
 \section{Betriebsregime eines AOMs}
 
@@ -567,7 +567,13 @@ Um die unterschiedlichen Phasenverschiebungen zu zeigen, wurden von jeder Einste
 
 \chapter{Fazit}
 
-In der Tat kann man feststellen, dass die Berechnungen gemäß der Bragg-Bedingung zielführend und von hinreichender Genaugkeit sind, obwohl auch höhere Beugungsordnungen sichtbar gewesen sind. Der exakte Parameter $\rho$ lässt sich leider nicht ohne weiteres berechnen, da schwierig zu bestimmende Größen wie der mittlere Brechnungsindex sowie die Modulation des Brechungsindex enthalten sind. Es ist aber ersichtlich, dass $\rho$ im kritischen Bereich liegen muss, d.h.\ höchstwahrscheinlich zwischen 1 und 10 liegt. Somit lässt sich erklären, dass zwar Beugung nach dem Bragg-Gesetz auftritt, jedoch auch höhere Beugungsordnungen (gemäß des Raman-Nath-Regimes) beobachtet werden können.
+In der Tat kann man feststellen, dass die Berechnungen gemäß der Bragg-Bedingung zielführend und von hinreichender Genaugkeit sind, obwohl auch höhere Beugungsordnungen sichtbar gewesen sind. Der exakte Parameter $\rho$ lässt sich leider nicht ohne weiteres berechnen, da schwierig zu bestimmende Größen wie der mittlere Brechnungsindex sowie die Modulation des Brechungsindex enthalten sind. Es ist aber ersichtlich, dass $\rho$ im kritischen Bereich liegen muss, d.h.\ höchstwahrscheinlich zwischen 1 und 10 liegt. Somit lässt sich erklären, dass zwar Beugung nach dem Bragg-Gesetz auftritt, jedoch auch höhere Beugungsordnungen (gemäß des Raman-Nath-Regimes) beobachtet werden können. Dies lässt sich auch mittels des sog. Q-Wertes erklären, der wie folgt definiert ist: 
+
+$$Q = \frac{2 \pi \lambda_L L}{\Lambda^2 n_0}$$,
+
+wobei $\lambda_L$ die Lichtwellenlänge ist, L die Länge des Kristalls im AOM (L kann mit etwa 15 mm abgeschätzt werden), $\Lambda$ die Gitterkonstante (also die Schallwellenlänge im Kristall gemäß $\lambda_S = \frac{v_S}{f_S}$) und $n_0$ der mittlere Brechungsindex, welcher für Tellurdioxid bei 486 nm einen Wert von $n_0 = 2,24$ besitzt \cite{wiki}.
+
+Es ergibt sich für unsere Sitution ein Q-Wert von etwa 11, was der Einschätzung des Parameters $\rho$ entspricht, da ab einem Q-Wert von 10 Bragg-Regime vorliegt und der Q-Wert gerade so darüber liegt, wir können also für die Berechnungen vom Bragg-Regime ausgehen.
 
 %ENDE INHALT
 \cleardoublepage{}
@@ -578,6 +584,7 @@ In der Tat kann man feststellen, dass die Berechnungen gemäß der Bragg-Bedingu
    
    \bibitem{Anleitung} Anleitungsblatt zum Versuch
    \bibitem{AndereGruppe} AOM F-Praktikumsgruppe vom 01.12.2014
+   \bibitem{wiki} http://de.wikipedia.org/wiki/Tellurdioxid
 \end{thebibliography}
 \chapter{Messdaten}
 \VerbatimInput[label=\fbox{Aufgabe3/0V UF.txt}]{data/Aufgabe3/0V_UF.txt}
