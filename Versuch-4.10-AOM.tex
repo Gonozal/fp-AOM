@@ -172,7 +172,7 @@ In diesem Versuch soll der akusto-optische Effekt untersucht werden und durch di
 
 Der akusto-optische Modulator (AOM) nutzt die Tatsache, dass Schallwellen in einem Medium ein optisches Gitter erzeugen. Sie bewirken eine periodische Dichte- und somit Brechnungsindexmodulation, d.h.\ es entsteht ganz analog zur Bragg-Reflexion ein Gitter mit der ``Gitterkonstanten'' $\lambda_S$, der Schallwellenlänge. Es gilt folglich für konstruktive Interferenz: 
 $$2~sin(\theta) = \frac{\lambda}{\lambda_S}$$ 
-Zur technischen Umsetzung dient ein an einen Würfel montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
+Zur technischen Umsetzung dient ein an einen Kristall montierter Piezo-Aktor, welcher beim Anlegen einer geeigneten Hochfrequenzspannung entsprechende mechanische Schwingungen ausführt. Auf der gegenüberliegenden Seite ist ein Absorber zur Verhinderung stehender Wellen angebracht.
 
 \section{Betriebsregime eines AOMs}
 
@@ -311,7 +311,7 @@ Die Messung ist prinzipiell die gleiche wie zuvor, allerdings ist die zu variier
   \label{fig:Bild1}
 \end{figure}
 
-Aus der Bragg-Bedingung lässt sich erkennen, dass der Winkel $\theta$ zwischen Schall- und Lichtwellen genau $\frac{\omega}{2}$ ist. D.h.\ $\theta = \frac{arc tan (\frac{x}{d})}{2}$. Die eigentliche Messung erfolgt jeweils nach der Bestimmung von x, wobei dies durch die Größe des Laserstrahls auf dem Schirm erschwert worden ist. Wir setzen daher einen Fehler von $\Delta~x = 0,25~mm$ an.\ d ist konstant mit $d = 226~mm \pm 2~mm$, $U_M = 5~V$ und $U_F = 10~V$. Das Offset beträgt für alle Messungen 16 bzw.\ 12 mV (siehe vorheriger Abschnitt). Um eine bessere Genaugkeit zu erreichen, sind zwei komplette Messreihen von x=0 mm bis x=6,5 mm in Schritten von 0,5 mm aufgenommen worden. Dies entspricht der Detektierung von 2 Maxima.
+Aus der Bragg-Bedingung lässt sich erkennen, dass der Winkel $\theta$ zwischen Schall- und Lichtwellen genau $\frac{\omega}{2}$ ist. D.h.\ $\theta = \frac{arc tan (\frac{x}{d})}{2}$. Die eigentliche Messung erfolgt jeweils nach der Bestimmung von x, wobei dies durch die Größe des Laserstrahls auf dem Schirm erschwert worden ist. Wir setzen daher einen Fehler von $\Delta~x = 0,25~mm$ an.\ d ist konstant mit $d = 226~mm \pm 2~mm$, $U_M = 5~V$ und $U_F = 10~V$. Das Offset beträgt für alle Messungen 16 bzw.\ 12 mV (siehe vorheriger Abschnitt). Um eine bessere Genauigkeit zu erreichen, sind zwei komplette Messreihen von x=0 mm bis x=6,5 mm in Schritten von 0,5 mm aufgenommen worden. Dies entspricht der Detektierung von 2 Maxima.
 
 
 \begin{figure}[h]
@@ -354,11 +354,11 @@ table[
 \addlegendentry{Beugungseffizienz}
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{2 Messreihen für $\varepsilon(\theta)$, durchgeführt von Esra Bauer und Sören Link. Auf Grund eines gewissen Interpretationsspielraumes beim Ablesen der Messwerte, begründet in der räumlichen Ausdehnung des Laserreflexs in Relation zur notwendigen Häufigkeit der Messungen, wird der Fehler für die Position des Reflexes als relativ groß angenommen. Bei der Messung von Sören Link kommt zu den original-Messdaten noch ein Offset von $0.5mm$ hinzu.}
+\captionof{figure}{2 Messreihen für $\varepsilon(\theta)$, durchgeführt von Esra Bauer und Sören Link. Auf Grund eines gewissen Interpretationsspielraumes beim Ablesen der Messwerte, begründet in der räumlichen Ausdehnung des Laserreflexes in Relation zur notwendigen Häufigkeit der Messungen, wird der Fehler für die Position des Reflexes als relativ groß angenommen. Bei der Messung von Sören Link kommt zu den original-Messdaten noch ein Offset von $0.5mm$ hinzu.}
 \end{figure}
 \FloatBarrier
 
-An hand der aufgenommenen Daten ist trotz der Verscheibung, die auf Grund systematischer Fehler zwischen den beiden durchgeführten Messreihen zustande kommt, ein qualitativ eindeutiger Verlauf zu erkennen. So ist die Beugungseffizienz bei 0° zunächst sehr gering, erreicht bei einem Einfallswinkel $\theta$ von etwa 0.25°-0.3° ein Maximum und fällt anschließend wieder ab. Ein zweites Maximum ist bei einem Einfallswinkel um 0.7° zu finden.
+Ahhand der aufgenommenen Daten ist trotz der Verschiebung, die auf Grund systematischer Fehler zwischen den beiden durchgeführten Messreihen zustande kommt, ein qualitativ eindeutiger Verlauf zu erkennen. So ist die Beugungseffizienz bei 0° zunächst sehr gering, erreicht bei einem Einfallswinkel $\theta$ von etwa 0.25°-0.3° ein Maximum und fällt anschließend wieder ab. Ein zweites Maximum ist bei einem Einfallswinkel um 0.7° zu finden.
 
 Mit Hilfe der Bragg-Bedingung $sin\left( \theta \right) = \frac{\lambda}{2\lambda_s} = \frac{\lambda \cdot \nu_s}{2 v_s}$ lässt sich nun aus den gemessenen Peaks die Schallgeschwindigkeit im AOM ausrechnen.
 
@@ -404,9 +404,9 @@ Als nächstes werden Pulslänge und Anstiegszeit konstant gewählt: $\tau_P = 1~
 
 Die Messung wird via Oszilloskop für Kombinationen von Linsen L1 und L2 verschiedener Brennweiten ausgewertet und wie vorher aufgezeichnet.
 
-Die Anstiegszeit des gemessenen Laserimpulses kommt durch die räumliche Ausdehnung des Lasers im AOM zustande, da das Schallwellengitter sich im Kristall mit Schallgeschwindigkeit bewegt und somit eine gewisse Zeit benötigt, bis es den Laserstrahl komplett erfasst hat. Es ist also ein linearer Zusammenhang zwischen Strahldurchmesser im AOM und Anstiegszeit des gemessenen Laserpulses zu erwarten.
+Die Anstiegszeit des gemessenen Laserpulses kommt durch die räumliche Ausdehnung des Lasers im AOM zustande, da das Schallwellengitter sich im Kristall mit Schallgeschwindigkeit bewegt und somit eine gewisse Zeit benötigt, bis es den Laserstrahl komplett erfasst hat. Es ist also ein linearer Zusammenhang zwischen Strahldurchmesser im AOM und Anstiegszeit des gemessenen Laserpulses zu erwarten.
 
-Anfänglich wurde ein Fehler bei der Justage der Linsen gemacht, insbesondere wurde die im Strahlengang weiter hinten befindliche Linse zu weit vom AOM entfernt angebracht. Aus diesem Grund liegen uns nur 2 verwertbare Messungen vor:
+Anfänglich wurde ein Fehler bei der Justierung der Linsen gemacht, insbesondere wurde die im Strahlengang weiter hinten befindliche Linse zu weit vom AOM entfernt angebracht. Aus diesem Grund liegen uns nur 2 verwertbare Messungen vor:
 
 \begin{table}[H]
   \begin{center}
@@ -421,7 +421,7 @@ Anfänglich wurde ein Fehler bei der Justage der Linsen gemacht, insbesondere wu
 \end{table}
 \FloatBarrier
 
-Zwar ist eine verringerung der Anstiegszeit für eine geringere Brennweite in L1 aus den Daten zu sehen, allerdings macht die Tatsache, dass uns nur 2 Messwerte vorliegen, eine genaue Auswertung unmöglich. Wir sind lediglich in der Lage, einen qualitativen Zusamenhang zwischen einer verringerung der Brennweite in L1 und dem Strahldurchmesser und somit der Anstiegszeit des Laserimpulses zu zeigen.
+Zwar ist eine Verringerung der Anstiegszeit für eine geringere Brennweite in L1 aus den Daten zu sehen, allerdings macht die Tatsache, dass uns nur 2 Messwerte vorliegen, eine genaue Auswertung unmöglich. Wir sind lediglich in der Lage, einen qualitativen Zusammenhang zwischen einer Verringerung der Brennweite in L1 und dem Strahldurchmesser und somit der Anstiegszeit des Laserpulses zu zeigen.
 
 \section{AOM als Frequenzschieber}
 
@@ -439,11 +439,11 @@ Nun wird die Messung mit $U_M = 5~V$ und variabler $U_F$ gestartet. Wir stellen 
 \begin{figure}[H]
   \centering
      \includegraphics[width=0.7\textwidth]{data/Aufgabe6/aom_aus.png}
-  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein peak bei 341.5 MHz zu sehen\cite{AndereGruppe}}
+  \caption[Cap for listoffigures]{Doppelpassmessung bei ausgeschaltetem AOM. Obwohl keine Frequenzverschiebung durch den AOM auftritt, ist ein Peak bei 341.5 MHz zu sehen.\cite{AndereGruppe}}
   \label{fig:Bild4}
 \end{figure}
 
-Offensichtlich treten auch ohne Einwirkung des AOMs Schwebungen zwischen verschiedenen Laserfrequenzen auf. Erklärt werden kann dies durch Schwebung der Grundmode mit höheren im Laser entstehenden longitudinalen Moden. Der Frequenzunterschied zweier benachtbarter Lasermoden ist durch $\Delta \nu = \frac{c}{2L}$ gegeben. Einsetzen der Frequenzdifferenz von $341,515MHz$ ergibt eine theoretische Resonatorlänge von etwa $41,5cm$. Leider sind uns keine genauen Angaben zur tatsächlichen Resonatorlänge bekannt, allerdings passt der errechnete Wert in etwa zur größe des verwendeten Lasers.
+Offensichtlich treten auch ohne Einwirkung des AOMs Schwebungen zwischen verschiedenen Laserfrequenzen auf. Erklärt werden kann dies durch Schwebung der Grundmode mit höheren im Laser entstehenden longitudinalen Moden. Der Frequenzunterschied zweier benachbarter Lasermoden ist durch $\Delta \nu = \frac{c}{2L}$ gegeben. Einsetzen der Frequenzdifferenz von $341,515 MHz$ ergibt eine theoretische Resonatorlänge von etwa $41,5 cm$. Leider sind uns keine genauen Angaben zur tatsächlichen Resonatorlänge bekannt, allerdings passt der errechnete Wert in etwa zur Größe des verwendeten Lasers.
 
 Bei Inbetriebnahme des AOMs kommen wie erwartet weitere Peaks hinzu.
 
@@ -459,10 +459,10 @@ Bei Inbetriebnahme des AOMs kommen wie erwartet weitere Peaks hinzu.
     \caption[Cap for listoffigures]{$U_F = 3V$}
     \label{fig:UF3}
   \end{subfigure}~%
-  \caption{Aufgenommene Peaks bei Betrieb des AOMs in Doppelpasskonfugration.\cite{AndereGruppe}}\label{fig:doublepasspeaks}
+  \caption{Aufgenommene Peaks bei Betrieb des AOMs in Doppelpasskonfugration\cite{AndereGruppe}.}\label{fig:doublepasspeaks}
 \end{figure}
 
-Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch den AOM modifizierten Laserfrequenz treten hier noch 2 weitere, schwächere Peaks auf. Es stellt sich heraus, dass der 2. peak von rechts genau der Frequenzdifferenz zwischen der durch den AOM hervorgerufenen Schwebung und der Lasermoden-Schwebung entspricht, und kann so als Schwebung dieser beiden Frequenzen aufgefasst werden. Der erste Peak von links (abgesehen von dem am Rand zu sehenden nullpeak) entspricht wiederrum genau der Frequenzdifferenz des eben genannten peaks und des AOM-Peaks.
+Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch den AOM modifizierten Laserfrequenz treten hier noch 2 weitere, schwächere Peaks auf. Es stellt sich heraus, dass der 2. Peak von rechts genau der Frequenzdifferenz zwischen der durch den AOM hervorgerufenen Schwebung und der Lasermoden-Schwebung entspricht, und kann so als Schwebung dieser beiden Frequenzen aufgefasst werden. Der erste Peak von links (abgesehen von dem am Rand zu sehenden Nullpeak) entspricht wiederum genau der Frequenzdifferenz des eben genannten Peaks und des AOM-Peaks.
 
 \begin{table}[H]
   \begin{center}
@@ -473,10 +473,10 @@ Neben dem erwarteten Peak durch die Schwebung der ursprünglichen und der durch 
           $3V$       & $147,1 MHz$                       \\ \hline
     \end{tabular}
   \end{center}
-  \caption{Frequenzverschiebung im AOM in Abhängigkeit von der angelegten Frequenzmodulationsspannung \cite{AndereGruppe}. Da wir den Fehler durch die Durchfürhung nicht beurteilen können, schätzen wir ihn an Hand der Pixelgröße auf $\Delta \nu = 1MHz$ ab.}
+  \caption{Frequenzverschiebung im AOM in Abhängigkeit von der angelegten Frequenzmodulationsspannung \cite{AndereGruppe}. Da wir den Fehler durch die Durchführung nicht beurteilen können, schätzen wir ihn an Hand der Pixelgröße auf $\Delta \nu = 1 MHz$ ab.}
 \end{table}
 
-Da der Laser in der Doppelpasskonfiguration den AOM zwei mal durchquert, muss die gemessene Frequenz noch halbiert werden. An Hand dieser Daten kann dann eine Eichung der Frequenzmodulationsspannung $U_F$ durchgeführt werden. 
+Da der Laser in der Doppelpasskonfiguration den AOM zwei mal durchquert, muss die gemessene Frequenz noch halbiert werden. Anhand dieser Daten kann dann eine Eichung der Frequenzmodulationsspannung $U_F$ durchgeführt werden. 
 
 Da für einen Fit zu wenige Daten vorhanden sind, nehmen wir den Zusammenhang zwischen $\Delta \nu$ und $U_F$ als linear an und erhalten $\nu\left( U_F \right) = 65.75 MHz + \left( 2,6 \pm 0,18 \right)\frac{MHz}{V} \cdot V_F$.
 
